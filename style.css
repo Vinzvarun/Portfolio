@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: absolute;
+    background-color: rgb(201 232 240);
+    height: 100vh;
+    /* width: 247px; */
+    /* width: 444px; */
+    font-family: sans-serif , 'fira Sans';
+    transition: transform 0.3s ease-in;
+}
+
+.sidebarGo{
+    transform: translate(-444px, 0px);
+    position: absolute;
+}
+
+.sidebar nav{
+    padding: 45px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    font-size: 1.1rem;
+    padding: 33px 0;
+}
+
+.sidebar nav li a{
+    text-decoration: none;
+    color: black;
+}
+.main{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #f1e0dc; */
+    /* padding: 20px; */
+}
+
+.container {
+    display: flex;
+}
+
+.infoContainer {
+    /* background-color: rgb(24, 164, 96); */
+    flex-wrap: wrap;
+    height: 58vh;
+    width: 80vw;
+    margin: 115px auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.devPic img {
+    height: 58vh;
+}
+
+.devInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.hello{
+    font-size: 3em;
+    font-weight: 1px;
+    /* font-weight: bold; */
+}
+
+.name{
+    font-size: 3em;
+    font-weight: bold;
+    font-family: sans-serif , 'fira Sans';
+
+}
+
+.about{
+    font-size: 2.5em;
+}
+
+.moreabout{
+    font-size: 1.31em;
+    font-family:  'fira Sans' , sans-serif;
+}
+
+.buttons{
+    margin-top: 2.2em;
+}
+
+.btn{
+    cursor: pointer;
+    padding: 11px 23px;
+    border-radius: 22px;
+    color: white;
+    background-color: rgb(121 88 83);
+    font-weight: bold;
+    font-size: .8em;
+    margin: -10px 0px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: rgb(121 88 83);
+    transform: scale(0.8);
+
+}
+
+.btn-sm{
+    font-size: 12px;
+    padding: 7px 13px;
+    margin: 10px 0;
+}
+
+
+/* Contactform Styling */
+
+.contactform{
+    padding: 0 34px;
+    /* padding-top: 144px; */
+    font-family: sans-serif , 'fira Sans';
+    margin: 80px;
+}
+
+.contactform h1{
+    font-family: 'Source Code Pro', monospace;
+    /* padding-top: 50px ; */
+    text-align: center;
+} 
+
+.contactform form div{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform form div input{
+    /* width:26vw; */
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
+
+.contactform form{
+    margin: 0 40px;
+}
+
+#emailhelp{
+    font-size: 11px;
+    color: midnightblue;
+    margin: 0 5px;
+    padding: 3px 0 0 0;
+}
+
+#form-check{
+    flex-direction: row;
+}
+
+#form-check input{
+    width: 20px;
+    margin: 3px 0;
+}
+
+#clientenquiry{
+    height: 80px;
+}
+
+/* blog Styling */
+
+.blogItem{
+    margin: 25px;
+    font-family: sans-serif , 'fira Sans';
+}
+
+.blogcontainer h1{
+    text-align: center;
+    font-family: sans-serif , 'fira Sans';
+    margin: 20px;
+
+}
+
+.blogcontainer{
+    margin: 50px 80px;
+}
+
+.blogItem p{
+    font-family: 'Source Code Pro', monospace;
+}
+
+/* Intro Styling */
+
+.intro {
+    margin: 60px 80px;
+}
+
+.intro h2{
+    font-family: sans-serif , 'fira Sans';
+    margin: 20px;
+}
+
+.intro p{
+    margin: 20px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.skillcontainer{
+    padding: 20px;
+}
+
+.skillItem{
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.skill{
+    width: 400px;
+    height: 8px;
+    background-color: red;
+    border: 2px solid rgb(121 88 83);
+
+}
+
+/* mySkills Percentage css start */
+
+.hundred{
+    width: 260px;
+    background-color: blueviolet;
+}
+
+.st5{
+    width: 195px;
+    background-color: green;
+}
+
+.fifty{
+    width: 130px;
+    background-color: aqua;
+}
+
+.t5{
+    width: 65px;
+    background-color: yellow;
+}
+
+/* end */
+
+@media (max-width: 1463px) {
+    *{
+        /* background-color: rgb(168, 135, 135); */
+    }
+    .buttons{
+        font-size: 20px;
+    }
+    .devInfo{
+        font-size: 15px;
+    }
+    .devPic{
+        display: none;
+    }
+
+    .intro, .blogcontainer, .contactform{
+        margin: 55px 8px;
+    }
+}
+
+/* hamburger css */
+ /* start  */ 
+
+.hamburger{
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    left: 10px;
+    font-size: 30px;
+    font-family: sans-serif , 'fira Sans';
+}
+
+.ham{
+    transform: rotate(90deg);
+    margin-top: 5px;
+    margin-left:10px;
+}
+
+.cross{
+    margin-left: 135px;
+    margin-top: 2px;
+}
+
+/* end */
+
