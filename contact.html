@@ -26,24 +26,24 @@
         </div>
         <div class="contactform">
             <h1>Contact me for work/general Enquries</h1>
-            <form>
+            <form name="submit-to-google-sheet">
                 <div class="mb-3">
                     <label for="clientemail" class="form-label">Name</label>
-                    <input type="name" class="form-control" id="clientemail" aria-describedby="emailhelp">
+                    <input type="name" name="Name" placeholder="Full Name" required>
                     <div id="emailhelp" class="form-text">We'll never share your email & phone with anyone else.</div>
                 </div>
                 <div class="mb-3">
                     <label for="clientemail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="clientemail" aria-describedby="emailhelp">
+                    <input type="email" name="Email" placeholder="Your Email ID" required>
                     <div id="emailhelp" class="form-text">We'll never share your email & phone with anyone else.</div>
                 </div>
                 <div class="mb-3">
                     <label for="clientphone" class="form-label">Phone</label>
-                    <input type="phone" class="form-control" id="clientphone">
+                    <input type="tel" name="Phone" placeholder="Phone Number" required>
                 </div>
                 <div class="mb-3">
                     <label for="clientenquiry" class="form-label">Enquiry</label>
-                    <input type="text" class="form-control" id="clientenquiry" aria-describedby="emailhelp">
+                    <input type="text" name="Enquiry" placeholder="Enquiry" required>
                 </div>
                 <div class="mb-3" id="form-check">
                     <input type="checkbox" class="form-check-input" id="isclient">
@@ -51,10 +51,30 @@
                 </div>
                 <button type="submit" class="btn btn-sm">Submit</button>
             </form>
-
+            <span id="msg"></span>
         </div>
     </div>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwFCzOycjx9LONM3ZzEPULIqA58tyI95DkiK_1owtaeyUvmBUfJxSOiGlCyJ6CieWjF/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Thank you for Contacting Me!"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset();
+          })
+          .catch(error => console.error('Error!', error.message))
+      });
+    </script>
   </body>
+
+
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script>
     var typed = new Typed("#element", {
@@ -64,3 +84,7 @@
   </script>
   <script src="script.js"></script>
 </html>
+
+<!-- 
+my google Sheet Link :
+https://docs.google.com/spreadsheets/d/1MTD_JLuiANZZsRGkYLu7wg_7HPfZiguQm-iakFSLae4/edit#gid=0 -->
